@@ -3,11 +3,10 @@
 CREATE COMPUTE MODULE mq_destination_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
-		
 		DECLARE I INTEGER 1;
 		DECLARE J INTEGER 3;
 		WHILE J >= I DO
-			SET OutputLocalEnvironment.Destination.MQ.DestinationData[I].queueName = 'QL.OUT'||CAST(I AS CHAR);
+			SET OutputLocalEnvironment.Destination.MQ.DestinationData[I].queueName = 'QL.TAR'||CAST(I AS CHAR);
 			SET I = I + 1;
 		END WHILE;
 		SET OutputRoot.XMLNSC =InputRoot.XMLNSC;
